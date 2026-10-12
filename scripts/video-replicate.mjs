@@ -12,8 +12,8 @@
  */
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { basename, join, resolve } from 'node:path';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { basename, dirname, join, resolve } from 'node:path';
 
 const r2 = (n) => Math.round(n * 100) / 100;
 const r1 = (n) => Math.round(n * 10) / 10;
@@ -326,6 +326,7 @@ video-replicate — 导演级高精拉片与AI视频复刻 CLI
     const title = flag(args, '--title', '');
     console.log(`[seed] 开始对 ${video} 执行高精度双阶切点检测...`);
     const doc = buildSeed(video, title);
+    mkdirSync(dirname(resolve(out)), { recursive: true });
     writeFileSync(out, JSON.stringify(doc, null, 2), 'utf8');
     console.log(`[seed] 检测完成！共切出 ${doc.totalShots} 镜，已保存至 ${out}`);
     const audits = auditLongShots(doc, 2.5);
