@@ -1,0 +1,26 @@
+{
+  "name": "video-replicate",
+  "version": "1.0.0",
+  "description": "导演级高精拉片与AI视频复刻引擎 (Directorial High-Fidelity Video Breakdown & AI Replication Pipeline)",
+  "main": "scripts/video-replicate.mjs",
+  "bin": {
+    "video-replicate": "scripts/video-replicate.mjs"
+  },
+  "scripts": {
+    "test": "node scripts/video-replicate.mjs --help"
+  },
+  "keywords": [
+    "ai-video",
+    "seedance2.5",
+    "kling-ai",
+    "directorial-cinematography",
+    "shot-breakdown",
+    "prompt-engineering",
+    "video-replication"
+  ],
+  "author": "YourName",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
